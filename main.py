@@ -543,6 +543,7 @@ Get loans if needed.
 /stations - View all stations
 /renamestation - Rename a station
 /achievements - View achievements and rewards
+/redeem - Redeem a passkey
 /exit - Exit game or main menu
 [WARNINGS]
 Do not modify game_info.txt as it may corrupt game data.
