@@ -401,7 +401,7 @@ Enter the amount of shares you want to buy. To calculate the price, type in "cal
     
     def sell_shares(self, alphic_shares_choice: str) -> None:
         share: str = self.shares[alphic_shares_choice]["name"]
-        if self.shares[alphic_shares_choice]["amount"] == "0":
+        if self.shares[alphic_shares_choice]["amount"] == 0:
             print(f"You do not own any shares in {share}.")
             return
         shares_to_sell = input("Enter the amount of shares you want to sell: ")
@@ -642,7 +642,7 @@ c) Train""")
 a) Main Menu
 b) Exit game""")
                 exit_action: str = input().strip().lower()
-                if not exit_action == "":
+                if exit_action:
                     print("You are about to exit your game. Please make sure to save your game.")
                     save = input("If you hadn't already saved your game, please type \"save\". : ").strip().lower()
                     if save == "save":
