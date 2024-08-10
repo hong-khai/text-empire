@@ -476,7 +476,7 @@ Dividend yield of {share_name}: {self.shares[share]["dividend_yield"] * 100}%
             self.game_info = file.readlines()
             
     def start_game(self) -> None:
-        print("""Welcome to TextEmpire - A text-adventure transport tycoon game.
+        print("""Welcome to TextEmpire: Society - A text-adventure transport tycoon game.
 Main Menu:
 a) Tutorial
 b) Create Game
