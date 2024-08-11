@@ -248,8 +248,8 @@ class Game:
             print("You do not have enough money!")
 
     def show_empire_info(self) -> None:
-        print(f"""Empire Name: {self.empire_info["name"]}
-Empire Monarch: {self.empire_info["monarch"]}
+        print(f"""Empire Name: {self.empire_info['name']}
+Empire Monarch: {self.empire_info['monarch']}
 Empire Treasury: {self.balance}
 Taxis: {self.taxis}
 Buses: {self.buses}
@@ -401,7 +401,7 @@ Enter the amount of shares you want to buy. To calculate the price, type in "cal
     
     def sell_shares(self, alphic_shares_choice: str) -> None:
         share: str = self.shares[alphic_shares_choice]["name"]
-        if self.shares[alphic_shares_choice]["amount"] == 0:
+        if self.shares[alphic_shares_choice]["amount"] == "0":
             print(f"You do not own any shares in {share}.")
             return
         shares_to_sell = input("Enter the amount of shares you want to sell: ")
@@ -413,14 +413,14 @@ Share Market
 {self.separator}""")
         for share in self.shares:
             share_name: str = self.shares[share]["name"]
-            print(f"""Price of one share in {share_name}: ${self.shares[share]["price"]}
-Value of one share in {share_name}: ${self.shares[share]["value"]}
+            print(f"""Price of one share in {share_name}: ${self.shares[share]['price']}
+Value of one share in {share_name}: ${self.shares[share]['value']}
 Dividend yield of {share_name}: {self.shares[share]["dividend_yield"] * 100}%
 {self.separator}""")
     
     def print_share_choices(self) -> None:
         for share in self.shares:
-            print(f"{share}) {self.shares[share]["name"]}")
+            print(f"{share}) {self.shares[share]['name']}")
         
     def create_station(self, station_type: str) -> None:
         if station_type in self.station_costs:
@@ -476,7 +476,7 @@ Dividend yield of {share_name}: {self.shares[share]["dividend_yield"] * 100}%
             self.game_info = file.readlines()
             
     def start_game(self) -> None:
-        print("""Welcome to TextEmpire: Society - A text-adventure transport tycoon game.
+        print("""Welcome to TextEmpire - A text-adventure transport tycoon game.
 Main Menu:
 a) Tutorial
 b) Create Game
@@ -642,7 +642,7 @@ c) Train""")
 a) Main Menu
 b) Exit game""")
                 exit_action: str = input().strip().lower()
-                if exit_action:
+                if not exit_action == "":
                     print("You are about to exit your game. Please make sure to save your game.")
                     save = input("If you hadn't already saved your game, please type \"save\". : ").strip().lower()
                     if save == "save":
