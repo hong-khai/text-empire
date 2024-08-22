@@ -252,7 +252,7 @@ Train Stations: {self.train_stations}""")
                 print("Invalid number.")
                 return
             
-            if random.randint(0, 1) == 1:
+            if random.randint(0, 1):
                 print(f"The bank is interested in your offer. It has been accepted. You have received a loan of ${self.special_loan_amount}.")
             else:
                 print("The bank is not available. Your offer has been declined.")
